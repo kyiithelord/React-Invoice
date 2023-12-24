@@ -1,12 +1,12 @@
 import React from "react";
 import Product from "./Product";
 
-function ProductGroup() {
+function ProductGroup({ products }) {
   return (
     <div id="productGroup" className="p-3">
-      <Product/>
-
-      
+      {products.map((product) => (
+        <Product key={product.id} product={product} />
+      ))}
     </div>
   );
 }
